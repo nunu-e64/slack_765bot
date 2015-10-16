@@ -1,0 +1,19 @@
+#!/bin/sh
+
+#エラーのうちとめeと未定義変数のうちとめu
+set -eu
+
+#export -p
+
+npm install
+export PATH="node_modules/.bin:node_modules/hubot/node_modules/.bin:$PATH"
+export HUBOT_SLACK_TOKEN=xoxb-12627063808-ippOKp6DEO9KeaixtyE7qzX8
+
+#export PORT=9999
+#HUBOT_SLACK_TEAM=xxxx \
+#HUBOT_SLACK_BOTNAME=hubot \
+#bin/hubot --adapter slack
+
+#exec node_modules/.bin/hubot --name "765bot" "$@"
+
+exec node_modules/.bin/hubot --name "765bot" -a slack "$@"
